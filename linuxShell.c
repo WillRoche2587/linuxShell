@@ -135,9 +135,6 @@ int get_input(char *buf) {
        }
    }
 
-
-
-
    /* Infinite loop to read characters one by one */
    while (1) {
        ssize_t n = read(STDIN_FILENO, &c, 1);  /* Read another character from standard input */
