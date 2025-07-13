@@ -1,5 +1,7 @@
 # linuxShell
 
+Note that this project was submitted for academic purposes, which is why the README is written in the style of a project report.
+
 Background:
 This C program implements a Unix-like shell with features including command history navigation, piping, I/O redirection, background execution, and built-in commands (cd, exit). It operates in non-canonical terminal mode to enable real-time input processing (e.g., arrow keys for history). The shell leverages system calls like fork, execvp, pipe, and chdir to manage processes, directories, and inter-process communication while maintaining a buffer for command history. The code is thoroughly annotated with comments in an effort to make everything as clear as possible.
 
