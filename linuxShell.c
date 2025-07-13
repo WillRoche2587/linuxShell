@@ -102,7 +102,6 @@ int get_input(char *buf) {
            }
            int most_recent = (start + command_count - 1) % BUFFER_SIZE;
 
-
            if (buffer_index == -1) {
                buffer_index = most_recent;  /* Start at the most recent command */
            } else {
