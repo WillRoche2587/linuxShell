@@ -8,8 +8,8 @@ This requirement was implemented through the print_prompt function. Essentially,
 
 II. Maintain Working Directory State
 This essentially means that the working directory can be changed with cd, which is implemented in the handle_cd_and_exit function. This function is called in main, and after handled, the loop will skip to the next iteration.  First, it checks if the first argument is exit, in which case, the program will exit. Then, if the first argument is cd, the program will check the second argument. If it's empty, an error will print; otherwise, the chdir system call will change the directory to the one specified in the second argument. An error will print if there is no such directory or if the change fails.
-III. Child Process Creation and Command Execution
 
+III. Child Process Creation and Command Execution
 This requirement is dealt with in my run_instruction function. Naturally, it begins with a fork, and an error check to ensure that it worked properly. From there, for the child process’s case, it will begin by checking the input and output files for any redirection needed. If necessary, an output redirection opens a file for writing and redirects the output to the file. Similarly, an input redirection opens the file for reading, and redirects the input to the file. After those checks, execvp is run on the first argument with any given parameters, as explained in the project instructions. After execvp error checks, it then moves on to the parent process. Here, it checks if the command was meant to be run in the background (which is dealt with in my divide_args function), and if so, it doesn’t wait for the child to complete. Otherwise, waitpid is called, and the parent waits until the child process is finished.
 
 IV. Repeat Last Executed Command
